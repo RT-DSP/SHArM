@@ -1,0 +1,1740 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "MDW API",
+        "description": "Descri\u00e7\u00e3o das fun\u00e7\u00f5es disponibilizadas para acesso e configura\u00e7\u00e3o de Devices",
+        "termsOfService": "https://www.google.com/policies/terms/",
+        "contact": {
+            "email": "contact@snippets.local"
+        },
+        "license": {
+            "name": "BSD License"
+        },
+        "version": "v1"
+    },
+    "host": "192.168.1.118",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/api/v1",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "Basic": {
+            "type": "basic"
+        }
+    },
+    "security": [
+        {
+            "Basic": []
+        }
+    ],
+    "paths": {
+        "/datalist/": {
+            "get": {
+                "operationId": "datalist_list",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "dev",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "voltage",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "current",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "active_power",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "reactive_power",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "power_factor",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "dev_energy",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "time",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "number"
+                    },
+                    {
+                        "name": "date_gte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "date_lte",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Data"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "datalist"
+                ]
+            },
+            "post": {
+                "operationId": "datalist_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                },
+                "tags": [
+                    "datalist"
+                ]
+            },
+            "parameters": []
+        },
+        "/datas/": {
+            "get": {
+                "operationId": "datas_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Data"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "datas"
+                ]
+            },
+            "post": {
+                "operationId": "datas_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                },
+                "tags": [
+                    "datas"
+                ]
+            },
+            "parameters": []
+        },
+        "/datas/{id}/": {
+            "get": {
+                "operationId": "datas_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                },
+                "tags": [
+                    "datas"
+                ]
+            },
+            "put": {
+                "operationId": "datas_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                },
+                "tags": [
+                    "datas"
+                ]
+            },
+            "patch": {
+                "operationId": "datas_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    }
+                },
+                "tags": [
+                    "datas"
+                ]
+            },
+            "delete": {
+                "operationId": "datas_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "datas"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this data.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/devices/": {
+            "get": {
+                "operationId": "devices_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Device"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "devices"
+                ]
+            },
+            "post": {
+                "operationId": "devices_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                },
+                "tags": [
+                    "devices"
+                ]
+            },
+            "parameters": []
+        },
+        "/devices/{id}/": {
+            "get": {
+                "operationId": "devices_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                },
+                "tags": [
+                    "devices"
+                ]
+            },
+            "put": {
+                "operationId": "devices_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                },
+                "tags": [
+                    "devices"
+                ]
+            },
+            "patch": {
+                "operationId": "devices_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                },
+                "tags": [
+                    "devices"
+                ]
+            },
+            "delete": {
+                "operationId": "devices_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "devices"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this Device.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/features/": {
+            "get": {
+                "operationId": "features_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Feature"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "features"
+                ]
+            },
+            "post": {
+                "operationId": "features_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                },
+                "tags": [
+                    "features"
+                ]
+            },
+            "parameters": []
+        },
+        "/features/{id}/": {
+            "get": {
+                "operationId": "features_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                },
+                "tags": [
+                    "features"
+                ]
+            },
+            "put": {
+                "operationId": "features_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                },
+                "tags": [
+                    "features"
+                ]
+            },
+            "patch": {
+                "operationId": "features_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Feature"
+                        }
+                    }
+                },
+                "tags": [
+                    "features"
+                ]
+            },
+            "delete": {
+                "operationId": "features_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "features"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this feature.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/initial/": {
+            "get": {
+                "operationId": "initial_list",
+                "description": "API de Cadastro de informa\u00e7\u00f5es HEMS",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "initial"
+                ]
+            },
+            "put": {
+                "operationId": "initial_update",
+                "description": "API de Cadastro de informa\u00e7\u00f5es HEMS",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "initial"
+                ]
+            },
+            "parameters": []
+        },
+        "/interfaces/": {
+            "get": {
+                "operationId": "interfaces_list",
+                "description": "API de Configura\u00e7\u00e3o da Interface Zigbee Coordinator",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "interfaces"
+                ]
+            },
+            "put": {
+                "operationId": "interfaces_update",
+                "description": "API de Configura\u00e7\u00e3o da Interface Zigbee Coordinator",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "interfaces"
+                ]
+            },
+            "parameters": []
+        },
+        "/outlets/": {
+            "get": {
+                "operationId": "outlets_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Outlet"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "post": {
+                "operationId": "outlets_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "parameters": []
+        },
+        "/outlets/set_device/{id}/": {
+            "put": {
+                "operationId": "outlets_set_device",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this outlet.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/outlets/{id}/": {
+            "get": {
+                "operationId": "outlets_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "put": {
+                "operationId": "outlets_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "patch": {
+                "operationId": "outlets_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "delete": {
+                "operationId": "outlets_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this outlet.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/outlets/{id}/data/": {
+            "get": {
+                "operationId": "outlets_data",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Outlet"
+                        }
+                    }
+                },
+                "tags": [
+                    "outlets"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this outlet.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugRequest/": {
+            "get": {
+                "operationId": "plugRequest_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/PlugRequest"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "plugRequest"
+                ]
+            },
+            "post": {
+                "operationId": "plugRequest_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugRequest"
+                ]
+            },
+            "parameters": []
+        },
+        "/plugRequest/{id}/": {
+            "get": {
+                "operationId": "plugRequest_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugRequest"
+                ]
+            },
+            "put": {
+                "operationId": "plugRequest_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugRequest"
+                ]
+            },
+            "patch": {
+                "operationId": "plugRequest_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugRequest"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugRequest"
+                ]
+            },
+            "delete": {
+                "operationId": "plugRequest_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "plugRequest"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this plugRequest.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/plugResponse/": {
+            "get": {
+                "operationId": "plugResponse_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/PlugResponse"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "plugResponse"
+                ]
+            },
+            "post": {
+                "operationId": "plugResponse_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugResponse"
+                ]
+            },
+            "parameters": []
+        },
+        "/plugResponse/{id}/": {
+            "get": {
+                "operationId": "plugResponse_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugResponse"
+                ]
+            },
+            "put": {
+                "operationId": "plugResponse_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugResponse"
+                ]
+            },
+            "patch": {
+                "operationId": "plugResponse_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/PlugResponse"
+                        }
+                    }
+                },
+                "tags": [
+                    "plugResponse"
+                ]
+            },
+            "delete": {
+                "operationId": "plugResponse_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "plugResponse"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this plugResponses.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/root-data/": {
+            "get": {
+                "operationId": "root-data_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/RootData"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "root-data"
+                ]
+            },
+            "post": {
+                "operationId": "root-data_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                },
+                "tags": [
+                    "root-data"
+                ]
+            },
+            "parameters": []
+        },
+        "/root-data/{id}/": {
+            "get": {
+                "operationId": "root-data_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                },
+                "tags": [
+                    "root-data"
+                ]
+            },
+            "put": {
+                "operationId": "root-data_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                },
+                "tags": [
+                    "root-data"
+                ]
+            },
+            "patch": {
+                "operationId": "root-data_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/RootData"
+                        }
+                    }
+                },
+                "tags": [
+                    "root-data"
+                ]
+            },
+            "delete": {
+                "operationId": "root-data_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "root-data"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this root data.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/systems_hems/": {
+            "get": {
+                "operationId": "systems_hems_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Hems_sys"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "systems_hems"
+                ]
+            },
+            "post": {
+                "operationId": "systems_hems_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                },
+                "tags": [
+                    "systems_hems"
+                ]
+            },
+            "parameters": []
+        },
+        "/systems_hems/{id}/": {
+            "get": {
+                "operationId": "systems_hems_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                },
+                "tags": [
+                    "systems_hems"
+                ]
+            },
+            "put": {
+                "operationId": "systems_hems_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                },
+                "tags": [
+                    "systems_hems"
+                ]
+            },
+            "patch": {
+                "operationId": "systems_hems_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Hems_sys"
+                        }
+                    }
+                },
+                "tags": [
+                    "systems_hems"
+                ]
+            },
+            "delete": {
+                "operationId": "systems_hems_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "systems_hems"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this hems_sys.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "Data": {
+            "required": [
+                "voltage",
+                "current",
+                "active_power",
+                "reactive_power",
+                "power_factor",
+                "dev_energy",
+                "time"
+            ],
+            "type": "object",
+            "properties": {
+                "dev": {
+                    "title": "Dev",
+                    "type": "integer",
+                    "x-nullable": true
+                },
+                "voltage": {
+                    "title": "Voltage",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "current": {
+                    "title": "Current",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "active_power": {
+                    "title": "Active power",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "reactive_power": {
+                    "title": "Reactive power",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "power_factor": {
+                    "title": "Power factor",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "dev_energy": {
+                    "title": "Dev energy",
+                    "type": "string",
+                    "maxLength": 6,
+                    "minLength": 1
+                },
+                "time": {
+                    "title": "Time",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Device": {
+            "required": [
+                "devName",
+                "devType"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "devName": {
+                    "title": "DevName",
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "devType": {
+                    "title": "DevType",
+                    "type": "string",
+                    "enum": [
+                        "Generacao",
+                        "Consumo"
+                    ]
+                },
+                "dev_on": {
+                    "title": "Dev on",
+                    "type": "boolean"
+                }
+            }
+        },
+        "Feature": {
+            "required": [
+                "broker_address",
+                "cloud_method",
+                "cloud_time",
+                "update",
+                "request_time",
+                "user",
+                "password",
+                "template"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "broker_address": {
+                    "title": "Broker address",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "cloud_method": {
+                    "title": "Cloud method",
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "cloud_time": {
+                    "title": "Cloud time",
+                    "type": "string",
+                    "maxLength": 10,
+                    "minLength": 1
+                },
+                "update": {
+                    "title": "Update",
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "request_time": {
+                    "title": "Request time",
+                    "type": "string",
+                    "maxLength": 10,
+                    "minLength": 1
+                },
+                "update_date": {
+                    "title": "Update date",
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true
+                },
+                "user": {
+                    "title": "User",
+                    "type": "string",
+                    "maxLength": 50,
+                    "minLength": 1
+                },
+                "password": {
+                    "title": "Password",
+                    "type": "string",
+                    "maxLength": 50,
+                    "minLength": 1
+                },
+                "template": {
+                    "title": "Template",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                }
+            }
+        },
+        "Outlet": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "label": {
+                    "title": "Label",
+                    "type": "string",
+                    "maxLength": 50,
+                    "x-nullable": true
+                },
+                "outletType": {
+                    "title": "OutletType",
+                    "type": "boolean",
+                    "x-nullable": true
+                },
+                "connectedDevice": {
+                    "title": "Connecteddevice",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "outletZone": {
+                    "title": "Outletzone",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "mac_address": {
+                    "title": "Mac address",
+                    "type": "string",
+                    "maxLength": 50,
+                    "x-nullable": true
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Data"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "PlugRequest": {
+            "required": [
+                "plugId"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "readRelayStatus": {
+                    "title": "ReadRelayStatus",
+                    "type": "boolean",
+                    "x-nullable": true
+                },
+                "onOff": {
+                    "title": "OnOff",
+                    "type": "boolean",
+                    "x-nullable": true
+                },
+                "onOffTimer": {
+                    "title": "OnOffTimer",
+                    "type": "integer",
+                    "x-nullable": true
+                },
+                "reset": {
+                    "title": "Reset",
+                    "type": "boolean",
+                    "x-nullable": true
+                },
+                "switchedOutput": {
+                    "title": "SwitchedOutput",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "x-nullable": true
+                },
+                "plugId": {
+                    "title": "PlugId",
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                }
+            }
+        },
+        "PlugResponse": {
+            "required": [
+                "responseId",
+                "relayStatus",
+                "onOffStatus",
+                "switchedOutputStatus"
+            ],
+            "type": "object",
+            "properties": {
+                "responseId": {
+                    "title": "ResponseId",
+                    "type": "integer"
+                },
+                "relayStatus": {
+                    "title": "RelayStatus",
+                    "type": "boolean"
+                },
+                "onOffStatus": {
+                    "title": "OnOffStatus",
+                    "type": "boolean"
+                },
+                "switchedOutputStatus": {
+                    "title": "SwitchedOutputStatus",
+                    "type": "boolean"
+                }
+            }
+        },
+        "RootData": {
+            "required": [
+                "time",
+                "power"
+            ],
+            "type": "object",
+            "properties": {
+                "time": {
+                    "title": "Time",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "power": {
+                    "title": "Power",
+                    "type": "string",
+                    "maxLength": 50,
+                    "minLength": 1
+                }
+            }
+        },
+        "Hems_sys": {
+            "required": [
+                "hems_last_update",
+                "precoKWh"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "ID",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "hems_last_update": {
+                    "title": "Hems last update",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "userName": {
+                    "title": "UserName",
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "homeCity": {
+                    "title": "HomeCity",
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "homeStreet": {
+                    "title": "HomeStreet",
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "homeNeighbour": {
+                    "title": "HomeNeighbour",
+                    "type": "string",
+                    "maxLength": 20,
+                    "minLength": 1
+                },
+                "homeComplement": {
+                    "title": "HomeComplement",
+                    "type": "string",
+                    "maxLength": 7,
+                    "minLength": 1
+                },
+                "precoKWh": {
+                    "title": "PrecoKWh",
+                    "type": "string",
+                    "format": "decimal"
+                }
+            }
+        }
+    }
+}
