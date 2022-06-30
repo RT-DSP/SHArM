@@ -1,3 +1,3 @@
-# Doc APIs do Middleware
+# Documentation of  APIs REST Middleware
 
-Todos os microsserviços oferecidos pelo middleware que são acessíveis através das APIs REST
+All Microservices Offered by Middleware That are Accessible through REST APIs
